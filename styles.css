@@ -1,0 +1,144 @@
+/* Base styles */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 20px;
+  background-color: rgb(223, 245, 249);
+  padding-top: 70px; /* space for fixed header */
+  scroll-behavior: smooth; /* smooth scroll */
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #222;
+}
+
+/* Match list */
+.match-list {
+  list-style: none;
+  padding: 0;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.match {
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 20px;
+  color: black;
+  font-weight: bold;
+  font-size: 15px;
+  margin-bottom: 15px;
+  max-width: 700px;
+  border: 1px solid blue;
+  border-left:7px solid blue;
+  text-align: center;
+}
+
+.tip {
+  text-align: end;
+  margin-left: auto;
+}
+
+.Prediction {
+  list-style: none;
+  font-size: 13px;
+  font-weight: lighter;
+  display:flex;
+  padding: 0;
+  margin: 0;
+}
+
+.match-prediction {
+  text-align: start;
+}
+
+/* Header styles */
+.main-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  border: 1px solid blue;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  z-index: 9999;
+  transition: top 0.3s ease, opacity 0.3s ease;
+  opacity: 1;
+}
+
+/* Hide header */
+.main-header.hidden {
+  top: -70px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Show header */
+.main-header.visible {
+  top: 0;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.logo img {
+  height: 50px; /* Adjust as needed */
+}
+
+/* Nav links */
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+/* Nav links active for mobile */
+.nav-links.active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background-color: white;
+  border: 1px solid blue;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  padding: 10px;
+  width: 150px;
+  z-index: 10000;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 8px 0;
+}
+
+/* Hamburger menu button */
+.menu-toggle {
+  display: none;
+  font-size: 30px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .menu-toggle {
+    display: block;
+  }
+}
